@@ -2,7 +2,7 @@
 
 # 设置 memdisk 和 ISO URL（替换为实际 URL）
 set memdisk_url https://raw.githubusercontent.com/BKGEEK/iPXE-memdisk/master/memdisk
-set iso_url http://your-server.com/install.iso
+set iso_url https://repo.virtuozzo.com/vzlinux/8/iso/vzlinux-8-min.iso
 
 # 可选：提示用户
 # echo Fetching memdisk from ${memdisk_url} and ISO from ${iso_url}...
