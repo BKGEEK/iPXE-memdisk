@@ -1,17 +1,6 @@
 #!ipxe
-# 设置 kernel 和 initrd URL（替换为您的服务器路径）
-set kernel_url http://your-server/vmlinuz
-set initrd_url http://your-server/initrd.img
-# 可选：提示用户
-echo Booting VzLinux 8 from PXE...
-# 加载 kernel（添加 Anaconda 参数：inst.stage2 指定安装源，quiet 静默，ip=dhcp 网络）
-kernel ${kernel_url} \
-    inst.stage2=http://your-server/vzlinux-8-min.iso \
-    inst.repo=http://your-server/vzlinux-8-min.iso \
-    inst.ks=http://your-server/kickstart.cfg \ # 可选：Kickstart 自动化安装
-    quiet \
-    ip=dhcp \
-# 加载 initrd
-initrd ${initrd_url}
-# 引导
-boot 引导到安装界面然后手动安装即可
+
+set mirror http://10.0.0.1/vzlinux/9/os
+kernel ${mirror}/images/pxeboot/vmlinuz initrd=initrd.img inst.repo=https://repo.virtuozzo.com/vzlinux/8/x86_64/os/repodata/
+initrd ${mirror}/images/pxeboot/initrd.img
+boot
