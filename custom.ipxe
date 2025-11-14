@@ -1,6 +1,13 @@
 #!ipxe
 
+# 先定义 repo 变量（替换为你的实际仓库 URL，例如 VzLinux 8 的镜像）
 set repo https://repo.virtuozzo.com/vzlinux/8/x86_64/os/
-kernel https://ftp.orgv.eu/vmlinuz initrd=initrd.img inst.repo=${repo}
-initrd https://ftp.orgv.eu/initrd.img
+
+# 加载内核（带参数）
+kernel https://ftp.orgv.eu/download.php?file=vmlinuz inst.repo=${repo}
+
+# 加载 initrd（独立命令，全 URL）
+initrd https://ftp.orgv.eu/download.php?file=initrd.img
+
+# 启动引导
 boot
