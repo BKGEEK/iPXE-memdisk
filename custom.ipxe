@@ -6,8 +6,8 @@ set boot_server http://ftp.orgv.eu
 
 # 服务器 B: 托管安装源 (Packages) 的 Web 服务器地址 (Repo Server)
 set repo_server http://repo.virtuozzo.com
-# 安装源在服务器 B 上的路径 (例如 /vzlinux/8/BaseOS/x86_64/)
-set repo_path /vzlinux/8/BaseOS/x86_64/
+# 安装源在服务器 B 上的路径 (例如 /vzlinux/8/BaseOS/x86_64/os)
+set repo_path /vzlinux/8/BaseOS/x86_64/os
 
 # --- 2. 引导配置 (手动安装) ---
 echo 启动 VzLinux 8 安装...
