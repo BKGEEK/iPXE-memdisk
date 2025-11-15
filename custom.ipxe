@@ -1,18 +1,18 @@
 #!ipxe
 
-# 定义 repo（安装源，替换为你的 distro 镜像；这里用 VzLinux 8 示例）
+# 定义 repo（安装源，替换为您的镜像；这里用 VzLinux 8 示例）
 set repo https://repo.virtuozzo.com/vzlinux/8/BaseOS/x86_64/os/
-# 先加载 initrd（交换顺序，修复 UEFI 加载问题）
-initrd http://ftp.orgv.eu/download.php?file=initrd.img
+
+# 加载内核
 kernel http://ftp.orgv.eu/download.php?file=vmlinuz \
     inst.repo=${repo} \
     root=live:${repo} \
     rd.neednet=1 \
     rd.live.image quiet \
-    console=ttyS0,115200 \
+    console=ttyS0,115200
 
-# 释放内存（UEFI 优化）
-imgfree
+# 加载 initrd
+initrd http://ftp.orgv.eu/download.php?file=initrd.img
 
 # 启动
 boot
